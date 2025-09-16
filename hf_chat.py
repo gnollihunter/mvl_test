@@ -6,6 +6,7 @@ TOKEN = os.getenv("HF_TOKEN")
 client = InferenceClient(model=MODEL, token=TOKEN)
 
 print(f"🤖 HF Chat auf {MODEL} (exit zum Beenden)")
+print("🔧 Version 2: jetzt mit Teständerung!")
 history = [{"role": "system", "content": "You are a helpful coding assistant. Answer briefly."}]
 
 while True:
@@ -26,3 +27,4 @@ while True:
         history.append({"role": "assistant", "content": answer})
     except Exception as e:
         print("⚠️ Fehler:", e)
+        
